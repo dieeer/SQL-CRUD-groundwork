@@ -2,6 +2,7 @@
 DROP TABLE characters;
 
 CREATE TABLE characters(
+    id SERIAL,
     name VARCHAR(255),
     darkside BOOLEAN,
     age INT
@@ -26,8 +27,9 @@ SELECT COUNT(*) FROM characters;
 UPDATE characters SET darkside = false WHERE name = 'Han Solo';
 UPDATE characters SET (name, darkside) = ('Darth Vader', true) WHERE name = 'Anakin Skywalker';
 UPDATE characters SET age = 100 WHERE name = 'Chewbacca';
-
+UPDATE characters SET age = 27 WHERE id = 6;
 SELECT * FROM characters;
+
 
 -- (D)elete
 DELETE FROM characters WHERE name = 'Darth Maul';
