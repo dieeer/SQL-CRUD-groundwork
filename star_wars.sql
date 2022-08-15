@@ -1,11 +1,19 @@
-
+-- drop tables
 DROP TABLE characters;
+DROP TABLE lightsabers;
 
+-- creating the tables
 CREATE TABLE characters(
     id SERIAL,
     name VARCHAR(255),
     darkside BOOLEAN,
     age INT
+);
+
+CREATE TABLE lightsabers (
+    id SERIAL, 
+    hilt_metal VARCHAR(255),
+    colour VARCHAR(255)
 );
 
 -- (C)reate
@@ -15,11 +23,17 @@ INSERT INTO characters (name, darkside, age) VALUES ('Darth Maul', true, 32);
 INSERT INTO characters (name, darkside, age) VALUES ('Ashoka', false, 42);
 INSERT INTO characters (name, darkside, age) VALUES ('Chewbacca', false, 99);
 INSERT INTO characters (name, darkside, age) VALUES ('Luke Skywalker', false, 17);
+INSERT INTO lightsabers (hilt_metal, colour) VALUES ('Beskar', 'blue');
+INSERT INTO lightsabers (hilt_metal, colour) VALUES ('Kashyyyki Wood', 'green');
+INSERT INTO lightsabers (hilt_metal, colour) VALUES ('palladium', 'blue');
+INSERT INTO lightsabers (hilt_metal, colour) VALUES ('electrum', 'purple');
+INSERT INTO lightsabers (hilt_metal, colour) VALUES ('Beskar', 'black');
 
 
 -- (R)ead
 SELECT name FROM characters;
 SELECT * FROM characters;
+SELECT * FROM lightsabers;
 SELECT COUNT(*) FROM characters; 
 
 
